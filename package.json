@@ -1,0 +1,27 @@
+{
+  "name": "living-stack-community",
+  "version": "0.4.0-beta.1",
+  "mcpName": "io.github.equinoxaifinance-rgb/living-stack",
+  "type": "module",
+  "description": "The free Living Stack proof loop for scoped sessions, authorization, outcome receipts, and evidence-bound claims.",
+  "license": "Apache-2.0",
+  "author": "Living Stack",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/equinoxaifinance-rgb/living-stack-community.git"
+  },
+  "homepage": "https://living-stack-mcp.pages.dev",
+  "bugs": {
+    "url": "https://github.com/equinoxaifinance-rgb/living-stack-community/issues"
+  },
+  "engines": { "node": ">=22" },
+  "bin": { "living-stack-community": "server.mjs" },
+  "files": ["server.mjs", "src/", "README.md", "PRODUCT.md", "SECURITY.md", "LICENSE", "server.json"],
+  "scripts": {
+    "start": "node server.mjs",
+    "self-test": "node server.mjs --self-test",
+    "test": "node --test test/*.test.mjs",
+    "pack:check": "npm pack --dry-run --json"
+  },
+  "dependencies": { "@modelcontextprotocol/sdk": "1.29.0" }
+}
