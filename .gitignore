@@ -1,4 +1,6 @@
 node_modules/
 *.tgz
+*.mcpb
+.dist/
 .living-stack-community/
 receipts/

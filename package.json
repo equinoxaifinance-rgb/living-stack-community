@@ -16,12 +16,13 @@
   },
   "engines": { "node": ">=22" },
   "bin": { "living-stack-community": "server.mjs" },
-  "files": ["server.mjs", "src/", "README.md", "PRODUCT.md", "SECURITY.md", "LICENSE", "server.json"],
+  "files": ["server.mjs", "src/", "assets/", "README.md", "PRODUCT.md", "SECURITY.md", "LICENSE", "server.json"],
   "scripts": {
     "start": "node server.mjs",
     "self-test": "node server.mjs --self-test",
     "test": "node --test test/*.test.mjs",
-    "pack:check": "npm pack --dry-run --json"
+    "pack:check": "npm pack --dry-run --json",
+    "mcpb:build": "node scripts/build-mcpb.mjs"
   },
   "dependencies": { "@modelcontextprotocol/sdk": "1.29.0" }
 }

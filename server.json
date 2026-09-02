@@ -6,5 +6,12 @@
   "version": "0.4.0-beta.1",
   "repository": { "url": "https://github.com/equinoxaifinance-rgb/living-stack-community", "source": "github" },
   "websiteUrl": "https://living-stack-mcp.pages.dev",
-  "packages": []
+  "packages": [
+    {
+      "registryType": "mcpb",
+      "identifier": "https://github.com/equinoxaifinance-rgb/living-stack-community/releases/download/v0.4.0-beta.1/living-stack-community-0.4.0-beta.1.mcpb",
+      "fileSha256": "4af00f88d64b1f8f45073dd78abe216ef25eb124d91295a0922d925956468594",
+      "transport": { "type": "stdio" }
+    }
+  ]
 }
