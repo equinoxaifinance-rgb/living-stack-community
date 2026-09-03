@@ -21,11 +21,5 @@ jobs:
         run: ./mcp-publisher validate server.json
       - name: Authenticate with repository-bound GitHub OIDC
         run: ./mcp-publisher login github-oidc
-      - name: Publish Community replacement
-        run: ./mcp-publisher publish server.json
-      - name: Retire superseded full-beta registry entries
-        run: |
-          ./mcp-publisher status --status deleted --message "Replaced by the limited seven-tool Community proof edition 0.4.0-beta.1." io.github.equinoxaifinance-rgb/living-stack 0.3.4-beta.1
-          ./mcp-publisher status --status deleted --message "Replaced by the limited seven-tool Community proof edition 0.4.0-beta.1." io.github.equinoxaifinance-rgb/living-stack 0.3.3-beta.1
-          ./mcp-publisher status --status deleted --message "Replaced by the limited seven-tool Community proof edition 0.4.0-beta.1." io.github.equinoxaifinance-rgb/living-stack 0.3.1-beta.1
-          ./mcp-publisher status --status deleted --message "Replaced by the limited seven-tool Community proof edition 0.4.0-beta.1." io.github.equinoxaifinance-rgb/living-stack 0.3.0-beta.1
+      - name: Publish and reconcile registry state idempotently
+        run: node scripts/sync-registry.mjs --apply
