@@ -1,6 +1,6 @@
 import crypto from 'node:crypto';
 
-export const VERSION = '0.4.0-beta.1';
+export const VERSION = '0.4.1-beta.1';
 export const COMMUNITY_TOOLS = Object.freeze([
   'livingstack.status',
   'livingstack.session_start',

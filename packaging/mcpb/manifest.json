@@ -2,7 +2,7 @@
   "manifest_version": "0.3",
   "name": "living-stack-community",
   "display_name": "Living Stack Community",
-  "version": "0.4.0-beta.1",
+  "version": "0.4.1-beta.1",
   "description": "Free seven-tool proof loop for scoped authorization, outcome receipts, and evidence-bound claims.",
   "long_description": "Living Stack Community proves one complete local evidence loop without shipping the paid implementation. It opens scoped sessions, applies budget and risk gates, issues one-use action authorizations, records typed evidence, checks claims against exact successful outcomes and subjects, and preserves a tamper-evident local ledger.",
   "author": { "name": "Living Stack", "url": "https://living-stack-mcp.pages.dev" },

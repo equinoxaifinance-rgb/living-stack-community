@@ -1,6 +1,6 @@
 {
   "name": "living-stack-community",
-  "version": "0.4.0-beta.1",
+  "version": "0.4.1-beta.1",
   "mcpName": "io.github.equinoxaifinance-rgb/living-stack",
   "type": "module",
   "description": "The free Living Stack proof loop for scoped sessions, authorization, outcome receipts, and evidence-bound claims.",
@@ -16,7 +16,7 @@
   },
   "engines": { "node": ">=22" },
   "bin": { "living-stack-community": "server.mjs" },
-  "files": ["server.mjs", "src/", "assets/", "README.md", "PRODUCT.md", "SECURITY.md", "LICENSE", "server.json"],
+  "files": ["server.mjs", "src/", "assets/", "README.md", "PRODUCT.md", "SECURITY.md", "LICENSE"],
   "scripts": {
     "start": "node server.mjs",
     "self-test": "node server.mjs --self-test",

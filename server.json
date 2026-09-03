@@ -3,14 +3,14 @@
   "name": "io.github.equinoxaifinance-rgb/living-stack",
   "title": "Living Stack Community",
   "description": "Free seven-tool proof loop for scoped authorization, outcome receipts, and evidence-bound claims.",
-  "version": "0.4.0-beta.1",
+  "version": "0.4.1-beta.1",
   "repository": { "url": "https://github.com/equinoxaifinance-rgb/living-stack-community", "source": "github" },
   "websiteUrl": "https://living-stack-mcp.pages.dev",
   "packages": [
     {
       "registryType": "mcpb",
-      "identifier": "https://github.com/equinoxaifinance-rgb/living-stack-community/releases/download/v0.4.0-beta.1/living-stack-community-0.4.0-beta.1.mcpb",
-      "fileSha256": "4af00f88d64b1f8f45073dd78abe216ef25eb124d91295a0922d925956468594",
+      "identifier": "https://github.com/equinoxaifinance-rgb/living-stack-community/releases/download/v0.4.1-beta.1/living-stack-community-0.4.1-beta.1.mcpb",
+      "fileSha256": "209437f83c9b0bae68191b4e40ab98a39df52d5ab7bd442c81476e616e43ed83",
       "transport": { "type": "stdio" }
     }
   ]
