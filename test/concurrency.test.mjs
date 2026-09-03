@@ -122,6 +122,18 @@ test('read-only status snapshots remain coherent during an atomic session replac
    const state=core.sessionStatus(s);assert.equal(state.authorization_count,state.budget.reserved_usd);assert.equal(state.ledger_valid,true);
    await new Promise(resolve=>setTimeout(resolve,1));
   }
-  await pending;const final=core.sessionStatus(s);assert.equal(final.authorization_count,1);assert.equal(final.budget.reserved_usd,1);
+  const results=await pending;
+  const committed=results.filter(x=>x.result?.decision==='PASS').length;
+  const observed=core.sessionStatus(s);
+  assert.equal(observed.authorization_count,committed,JSON.stringify(results));
+  assert.equal(observed.budget.reserved_usd,committed);
+  // Windows can reject a rename while another process holds a read handle.
+  // That must fail closed (never report PASS for missing state); after readers
+  // finish, retry must commit normally rather than leave an unusable session.
+  if(committed===0){
+   assert.ok(results.every(x=>x.error),JSON.stringify(results));
+   assert.equal(core.authorizeAction({...s,action_id:'snapshot-retry',action_type:'read',estimated_cost_usd:1}).decision,'PASS');
+  }
+  const final=core.sessionStatus(s);assert.equal(final.authorization_count,1);assert.equal(final.budget.reserved_usd,1);
  }finally{if(previous===undefined)delete process.env.LIVING_STACK_STATE_DIR;else process.env.LIVING_STACK_STATE_DIR=previous;fs.rmSync(root,{recursive:true,force:true});}
 });
