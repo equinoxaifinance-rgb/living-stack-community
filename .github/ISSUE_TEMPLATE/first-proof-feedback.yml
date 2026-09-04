@@ -1,0 +1,63 @@
+name: First proof-loop feedback
+description: Report whether the free seven-tool loop worked and what ongoing workflow still needs Complete Local.
+title: "First proof: "
+labels:
+  - pilot-feedback
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for testing Living Stack Community on a real, harmless task. This issue is public. Do not include task content, personal data, credentials, private paths, ledger files, keys, or proprietary evidence.
+  - type: dropdown
+    id: host
+    attributes:
+      label: MCP host
+      options:
+        - Codex
+        - Claude
+        - Cursor
+        - VS Code
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: result
+    attributes:
+      label: Proof-loop result
+      description: Choose the furthest result you personally observed.
+      options:
+        - Installed but could not list the seven tools
+        - Listed tools but could not complete a session
+        - Completed and closed one proof session
+        - Completed more than one proof session
+    validations:
+      required: true
+  - type: dropdown
+    id: next_need
+    attributes:
+      label: What would make this useful for ongoing work?
+      options:
+        - Resume saved context after a restart
+        - Recover from a failed or interrupted workflow
+        - Export a signed portable trace
+        - Verify exact release bytes
+        - Coordinate multiple agents
+        - The free loop already covers my need
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: friction
+    attributes:
+      label: Where did you hesitate or get stuck?
+      description: Describe the product step only. Redact all private task details.
+      placeholder: I expected..., but observed...
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Public-data check
+      options:
+        - label: I checked that this report contains no private task content, credentials, personal data, keys, or proprietary evidence.
+          required: true

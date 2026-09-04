@@ -12,6 +12,8 @@ npx -y github:equinoxaifinance-rgb/living-stack-community
 
 Requires Node.js 22 or newer. The MCP command is `node /path/to/living-stack-community/server.mjs`.
 
+Want to help validate the product without buying it? Join the [five-user proof pilot](PILOT.md). Feedback is opt-in through a public GitHub issue; the Community runtime itself still makes no network calls.
+
 ## Included tools
 
 - `livingstack.status`
