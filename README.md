@@ -1,5 +1,7 @@
 # Living Stack Community
 
+Buyer guides: [run a real proof loop](https://github.com/equinoxaifinance-rgb/living-stack-community/blob/main/guides/first-proof.md) · [choose the right edition](https://github.com/equinoxaifinance-rgb/living-stack-community/blob/main/guides/choose-edition.md).
+
 Living Stack Community is the free **seven-tool proof loop** for MCP-capable agents. It proves the core behavior before a buyer pays: open a scoped session, authorize a bounded action, record typed evidence, check a claim against the exact subject and outcome, and close the session with a tamper-evident local ledger.
 
 It does **not** include the paid implementation for durable memory, recovery checkpoints, portable signed traces, release-byte verification, adoption receipts, or multi-agent coordination.
