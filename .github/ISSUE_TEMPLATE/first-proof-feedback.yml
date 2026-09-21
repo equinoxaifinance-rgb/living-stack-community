@@ -9,6 +9,30 @@ body:
       value: |
         Thank you for testing Living Stack Community on a real, harmless task. This issue is public. Do not include task content, personal data, credentials, private paths, ledger files, keys, or proprietary evidence.
   - type: dropdown
+    id: source
+    attributes:
+      label: Where did you find this proof pilot?
+      options:
+        - MCP Marketplace
+        - MCPServers
+        - Awesome MCP Servers
+        - GitHub search
+        - Product website
+        - Other or unknown
+    validations:
+      required: true
+  - type: dropdown
+    id: relationship
+    attributes:
+      label: Participation category
+      description: Self-reported attribution, not independently verified customer status.
+      options:
+        - Independent evaluator
+        - Owner or maintainer QA
+        - Prefer not to say
+    validations:
+      required: true
+  - type: dropdown
     id: host
     attributes:
       label: MCP host
