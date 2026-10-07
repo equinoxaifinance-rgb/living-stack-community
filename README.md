@@ -6,13 +6,36 @@ Living Stack Community is the free **seven-tool proof loop** for MCP-capable age
 
 It does **not** include the paid implementation for durable memory, recovery checkpoints, portable signed traces, release-byte verification, adoption receipts, or multi-agent coordination.
 
+**Free, 7 tools, no account.** Need more? [Complete Local](https://living-stack-mcp.pages.dev/#pricing) has 23 tools for $19 once ([compare editions](guides/choose-edition.md)).
+
 ## Install
 
+Requires Node.js 22 or newer.
+
+**Claude Desktop (one click):** download the [`.mcpb` bundle](https://github.com/equinoxaifinance-rgb/living-stack-community/releases/download/v0.4.1-beta.1/living-stack-community-0.4.1-beta.1.mcpb) and open it. Its SHA-256 is listed in [`server.json`](server.json).
+
+**Claude Code:**
+
 ```bash
-npx -y github:equinoxaifinance-rgb/living-stack-community
+claude mcp add living-stack -- npx -y github:equinoxaifinance-rgb/living-stack-community
 ```
 
-Requires Node.js 22 or newer. The MCP command is `node /path/to/living-stack-community/server.mjs`.
+**Cursor, Claude Desktop (manual) and other MCP clients:** add this to the client's MCP config (`~/.cursor/mcp.json`, or `claude_desktop_config.json`):
+
+```json
+{
+  "mcpServers": {
+    "living-stack": {
+      "command": "npx",
+      "args": ["-y", "github:equinoxaifinance-rgb/living-stack-community"]
+    }
+  }
+}
+```
+
+**Check it works:** `npx -y github:equinoxaifinance-rgb/living-stack-community --self-test` prints `"decision": "PASS"`.
+
+From a clone, the MCP command is `node /path/to/living-stack-community/server.mjs`.
 
 Want to help validate the product without buying it? Join the [five-user proof pilot](PILOT.md). Feedback is opt-in through a public GitHub issue; the Community runtime itself still makes no network calls.
 

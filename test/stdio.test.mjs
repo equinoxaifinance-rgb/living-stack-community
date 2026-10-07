@@ -22,3 +22,15 @@ test('a real MCP client discovers only Community and calls it end to end', async
   const resources = await client.listResources();
   assert.deepEqual(resources.resources.map(row => row.uri), ['livingstack://capabilities']);
 });
+
+test('the server starts when launched through a symlink, as npx and npm bins do', { skip: process.platform === 'win32' }, async t => {
+  const project = path.resolve(import.meta.dirname, '..');
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'living-stack-community-bin-'));
+  const link = path.join(dir, 'living-stack-community');
+  fs.symlinkSync(path.join(project, 'server.mjs'), link);
+  const transport = new StdioClientTransport({ command: process.execPath, args: [link], env: { ...process.env, LIVING_STACK_STATE_DIR: dir }, stderr: 'pipe' });
+  const client = new Client({ name: 'community-bin-verifier', version: '1.0.0' });
+  t.after(async () => { await client.close().catch(() => {}); fs.rmSync(dir, { recursive: true, force: true }); });
+  await client.connect(transport);
+  assert.equal((await client.listTools()).tools.length, 7);
+});
