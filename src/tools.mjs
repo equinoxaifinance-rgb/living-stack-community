@@ -24,6 +24,9 @@ const dispatch = {
 };
 
 export function callTool(core, name, args) {
+  // Only livingstack.* names can be paid tools; anything else is a typo or a
+  // wrong server, so say so instead of pointing at the paid edition.
+  if (!String(name).startsWith('livingstack.')) return { decision: 'FAIL', reason: 'unknown_tool', tools: COMMUNITY_TOOLS };
   if (!COMMUNITY_TOOLS.includes(name)) return { decision: 'FAIL', reason: 'paid_capability', upgrade_url: 'https://living-stack-mcp.pages.dev/#pricing' };
   return core[dispatch[name]](args || {});
 }

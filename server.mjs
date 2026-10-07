@@ -18,7 +18,10 @@ export function createServer(core = new CommunityCore()) {
   const server = new Server({ name: 'living-stack-community', version: VERSION }, { capabilities: { tools: {}, resources: {} }, instructions: INSTRUCTIONS });
   server.setRequestHandler(ListToolsRequestSchema, async () => ({ tools: TOOL_DEFINITIONS }));
   server.setRequestHandler(CallToolRequestSchema, async request => {
-    try { return jsonResult(callTool(core, request.params.name, request.params.arguments || {})); }
+    try {
+      const result = callTool(core, request.params.name, request.params.arguments || {});
+      return jsonResult(result, result?.reason === 'unknown_tool');
+    }
     catch (error) { return jsonResult({ decision: 'FAIL', reason: 'invalid_or_rejected_request', message: String(error?.message || error).slice(0, 300) }, true); }
   });
   server.setRequestHandler(ListResourcesRequestSchema, async () => ({ resources: [{ uri: 'livingstack://capabilities', name: 'Living Stack Community capabilities', mimeType: 'application/json' }] }));

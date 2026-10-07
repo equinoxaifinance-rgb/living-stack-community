@@ -19,6 +19,9 @@ test('Community exposes exactly the seven-tool proof loop', () => {
   for (const paid of ['livingstack.context_put', 'livingstack.checkpoint_save', 'livingstack.trace_export', 'livingstack.verify_release', 'livingstack.team_delegate']) {
     assert.equal(callTool(new CommunityCore(), paid, {}).reason, 'paid_capability');
   }
+  for (const typo of ['check_claim', 'nope', 'search']) {
+    assert.equal(callTool(new CommunityCore(), typo, {}).reason, 'unknown_tool');
+  }
 });
 
 test('Community completes a subject-bound evidence loop', () => {
