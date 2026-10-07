@@ -13,6 +13,7 @@ test('a real MCP client discovers only Community and calls it end to end', async
   const client = new Client({ name: 'community-verifier', version: '1.0.0' });
   t.after(async () => { await client.close().catch(() => {}); fs.rmSync(state, { recursive: true, force: true }); });
   await client.connect(transport);
+  assert.match(client.getInstructions() || '', /check_claim/);
   const tools = await client.listTools();
   assert.equal(tools.tools.length, 7);
   assert.ok(!tools.tools.some(row => /context|checkpoint|trace|release|team/.test(row.name)));
