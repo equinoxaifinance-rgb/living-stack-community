@@ -1,0 +1,26 @@
+# Living Stack Community
+
+> Free, local, seven-tool MCP server that makes an agent prove its work: open a scoped session, authorize each action, record typed evidence, and check a claim against that evidence before calling the work done.
+
+- Install (Claude Code): `claude mcp add living-stack -- npx -y github:equinoxaifinance-rgb/living-stack-community`
+- One-click Claude Desktop bundle (.mcpb) and SHA-256: see server.json and the GitHub releases
+- MCP registry name: io.github.equinoxaifinance-rgb/living-stack
+- Requires Node.js 22+. No network calls, no telemetry; state is local and stored as SHA-256 digests.
+
+## Tools
+- livingstack.status
+- livingstack.session_start
+- livingstack.session_status
+- livingstack.authorize_action
+- livingstack.record_outcome
+- livingstack.check_claim
+- livingstack.session_close
+
+## Docs
+- [README](https://github.com/equinoxaifinance-rgb/living-stack-community/blob/main/README.md)
+- [First proof loop](https://github.com/equinoxaifinance-rgb/living-stack-community/blob/main/guides/first-proof.md)
+- [Choose an edition](https://github.com/equinoxaifinance-rgb/living-stack-community/blob/main/guides/choose-edition.md)
+- [Product details](https://github.com/equinoxaifinance-rgb/living-stack-community/blob/main/PRODUCT.md)
+
+## Paid edition
+Complete Local: 23 tools, USD 19 once, up to five installations: https://living-stack-mcp.pages.dev/#pricing

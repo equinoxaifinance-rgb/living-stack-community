@@ -9,11 +9,20 @@ import { CommunityCore } from './src/core.mjs';
 import { TOOL_DEFINITIONS, callTool, capabilities, jsonResult } from './src/tools.mjs';
 import { VERSION } from './src/util.mjs';
 
+const INSTRUCTIONS = [
+  'Living Stack Community gates and records host actions; it never executes them.',
+  'Use the tools in this order: livingstack.session_start (scope, goal, budget) -> livingstack.authorize_action before each host action -> perform the action yourself -> livingstack.record_outcome with typed evidence -> livingstack.check_claim before saying the work is done -> livingstack.session_close.',
+  'Only report a claim as verified when check_claim returns PASS. External and destructive actions are rejected by the default policy.'
+].join(' ');
+
 export function createServer(core = new CommunityCore()) {
-  const server = new Server({ name: 'living-stack-community', version: VERSION }, { capabilities: { tools: {}, resources: {} } });
+  const server = new Server({ name: 'living-stack-community', version: VERSION }, { capabilities: { tools: {}, resources: {} }, instructions: INSTRUCTIONS });
   server.setRequestHandler(ListToolsRequestSchema, async () => ({ tools: TOOL_DEFINITIONS }));
   server.setRequestHandler(CallToolRequestSchema, async request => {
-    try { return jsonResult(callTool(core, request.params.name, request.params.arguments || {})); }
+    try {
+      const result = callTool(core, request.params.name, request.params.arguments || {});
+      return jsonResult(result, result?.reason === 'unknown_tool');
+    }
     catch (error) { return jsonResult({ decision: 'FAIL', reason: 'invalid_or_rejected_request', message: String(error?.message || error).slice(0, 300) }, true); }
   });
   server.setRequestHandler(ListResourcesRequestSchema, async () => ({ resources: [{ uri: 'livingstack://capabilities', name: 'Living Stack Community capabilities', mimeType: 'application/json' }] }));
