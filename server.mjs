@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { Server } from '@modelcontextprotocol/sdk/server/index.js';
@@ -33,7 +34,9 @@ async function selfTest() {
   return { decision: claim.decision, edition: 'community-proof-loop', version: VERSION, tool_count: TOOL_DEFINITIONS.length, session_id: started.session_id, outcome_id: outcome.outcome_id, ledger_head: closed.ledger_head };
 }
 
-const entry = process.argv[1] && path.resolve(process.argv[1]).toLowerCase() === path.resolve(fileURLToPath(import.meta.url)).toLowerCase();
+// npx and npm-installed bins launch through a symlink, so compare real paths.
+const realpath = file => { try { return fs.realpathSync(file); } catch { return path.resolve(file); } };
+const entry = process.argv[1] && realpath(process.argv[1]).toLowerCase() === realpath(fileURLToPath(import.meta.url)).toLowerCase();
 if (entry) {
   if (process.argv.includes('--self-test')) {
     try { const result = await selfTest(); process.stdout.write(`${JSON.stringify(result, null, 2)}\n`); if (result.decision !== 'PASS') process.exitCode = 1; }
