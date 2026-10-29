@@ -18,4 +18,4 @@ Community answers one buying question: **does Living Stack make an agent prove w
 
 Complete Local answers the operational question: **can that proof survive long work, interruption, release, and a team of agents?**
 
-Buy Complete Local at <https://living-stack-mcp.pages.dev/#pricing>.
+Buy Complete Local at <https://livingstack.steellantern.com/#pricing>.

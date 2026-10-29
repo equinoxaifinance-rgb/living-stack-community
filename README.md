@@ -6,7 +6,7 @@ Living Stack Community is the free **seven-tool proof loop** for MCP-capable age
 
 It does **not** include the paid implementation for durable memory, recovery checkpoints, portable signed traces, release-byte verification, adoption receipts, or multi-agent coordination.
 
-**Free, 7 tools, no account.** Need more? [Complete Local](https://living-stack-mcp.pages.dev/#pricing) has 23 tools for $19 once ([compare editions](guides/choose-edition.md)).
+**Free, 7 tools, no account.** Need more? [Complete Local](https://livingstack.steellantern.com/#pricing) has 23 tools for $19 once ([compare editions](guides/choose-edition.md)).
 
 ## Install
 
@@ -19,6 +19,14 @@ Requires Node.js 22 or newer.
 ```bash
 claude mcp add living-stack -- npx -y github:equinoxaifinance-rgb/living-stack-community
 ```
+
+**Codex:**
+
+```bash
+codex mcp add living-stack -- npx -y github:equinoxaifinance-rgb/living-stack-community
+```
+
+Want the exact commit we tested instead of the newest? The [start page](https://livingstack.steellantern.com/start.html#install) has the same commands pinned to one commit.
 
 **Cursor, Claude Desktop (manual) and other MCP clients:** add this to the client's MCP config (`~/.cursor/mcp.json`, or `claude_desktop_config.json`):
 
@@ -51,7 +59,7 @@ Want to help validate the product without buying it? Join the [five-user proof p
 
 ## Upgrade to Complete Local
 
-[Complete Local](https://living-stack-mcp.pages.dev/#pricing) has 23 tools and adds the capabilities that turn the proof loop into an operating runtime: durable context memory, checkpoint recovery, Ed25519-signed portable traces, release verification, opt-in adoption receipts, and all multi-agent Team workflows.
+[Complete Local](https://livingstack.steellantern.com/#pricing) has 23 tools and adds the capabilities that turn the proof loop into an operating runtime: durable context memory, checkpoint recovery, Ed25519-signed portable traces, release verification, opt-in adoption receipts, and all multi-agent Team workflows.
 
 Community is not a time-limited trial. It is the permanent proof edition. Complete Local is the product for ongoing work.
 

@@ -5,7 +5,7 @@
   "description": "Free seven-tool proof loop for scoped authorization, outcome receipts, and evidence-bound claims.",
   "version": "0.4.1-beta.1",
   "repository": { "url": "https://github.com/equinoxaifinance-rgb/living-stack-community", "source": "github" },
-  "websiteUrl": "https://living-stack-mcp.pages.dev",
+  "websiteUrl": "https://livingstack.steellantern.com",
   "packages": [
     {
       "registryType": "mcpb",
