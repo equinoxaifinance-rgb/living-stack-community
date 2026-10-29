@@ -2,7 +2,7 @@
 
 Use the free Community edition when your job is to learn and exercise a bounded authorization → observed outcome → evidence-bound claim loop. It exposes seven tools and stores its ledger locally. It is not a durable context-memory service.
 
-Use the [current product matrix](../PRODUCT.md) to compare the licensed Complete Local offer. Its additional jobs include durable context retrieval, recovery checkpoints, Ed25519-signed trace export, release-byte verification, opt-in adoption receipts and multi-agent coordination. The live [pricing page](https://living-stack-mcp.pages.dev/#pricing) is the purchase destination; inspect its current license and fulfillment terms before buying.
+Use the [current product matrix](../PRODUCT.md) to compare the licensed Complete Local offer. Its additional jobs include durable context retrieval, recovery checkpoints, Ed25519-signed trace export, release-byte verification, opt-in adoption receipts and multi-agent coordination. The live [pricing page](https://livingstack.steellantern.com/#pricing) is the purchase destination; inspect its current license and fulfillment terms before buying.
 
 ## Test the job you actually need
 
@@ -25,7 +25,7 @@ The current offer is $19 once for 23 tools, one private workspace and up to five
 
 The purchase flow asks you to generate and download an Ed25519 recovery kit before Stripe checkout. Keep the private recovery material yourself. After verified payment, follow the license and exact-hash package verification instructions, install locally, and test the specific recovery or handoff you need. Do not upload keys, private task content or ledgers in public feedback.
 
-[Compare Complete Local and inspect the purchase terms](https://living-stack-mcp.pages.dev/#pricing). If the free proof loop already solves your job, no purchase is needed.
+[Compare Complete Local and inspect the purchase terms](https://livingstack.steellantern.com/#pricing). If the free proof loop already solves your job, no purchase is needed.
 
 ## What to report before onboarding
 

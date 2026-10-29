@@ -23,4 +23,4 @@
 - [Product details](https://github.com/equinoxaifinance-rgb/living-stack-community/blob/main/PRODUCT.md)
 
 ## Paid edition
-Complete Local: 23 tools, USD 19 once, up to five installations: https://living-stack-mcp.pages.dev/#pricing
+Complete Local: 23 tools, USD 19 once, up to five installations: https://livingstack.steellantern.com/#pricing
